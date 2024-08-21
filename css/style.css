@@ -2,7 +2,7 @@
 :root {
     --primary: #1626fe;
     --light: #F1F8FF;
-    --dark: #0b43d3;
+    --dark: transparent;
 }
 body{
     background: url(../img/background.gif);
@@ -44,6 +44,7 @@ body{
 }
 
 
+
 /*** Button ***/
 .btn {
     font-family: 'Nunito', sans-serif;
@@ -54,7 +55,7 @@ body{
 
 .btn.btn-primary,
 .btn.btn-secondary {
-    color: #FFFFFF;
+    color: #00adfd;
 }
 
 .btn-square {
@@ -116,13 +117,18 @@ body{
 }
 
 @media (max-width: 991.98px) {
+    .navbar{
+        visibility: hidden;
+    }
     .sticky-top.navbar-dark {
         position: relative;
     }
 
+
     .navbar-dark .navbar-collapse {
         margin-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, .1)
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        visibility: hidden;
     }
 
     .navbar-dark .navbar-nav .nav-link,
@@ -154,20 +160,23 @@ body{
 
 
 /*** Hero Header ***/
-.hero-header {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+.row .col-lg-12 h1{
+    position: absolute;
+    bottom: 50%;
 }
 
-.hero-header img {
+.navbar a img {
     animation: imgRotate 50s linear infinite;
+    width: 50px;
+    margin-left: 5px;
 }
 
-@keyframes imgRotate { 
-    100% { 
-        transform: rotate(360deg); 
-    } 
+@keyframes imgRotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
